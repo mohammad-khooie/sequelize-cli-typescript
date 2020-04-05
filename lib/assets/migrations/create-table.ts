@@ -1,34 +1,34 @@
-import { QueryInterface, SequelizeStatic } from 'sequelize';
+import { QueryInterface, DataTypes } from 'sequelize';
 
 export = {
-    up: (queryInterface: QueryInterface, Sequelize: SequelizeStatic) => {
+    up: (queryInterface: QueryInterface) => {
         return queryInterface.createTable('<%= tableName %>', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
-                type: Sequelize.INTEGER
+                type: DataTypes.INTEGER
             },
 
         <% attributes.forEach(function (attribute) { %>
             <%= attribute.fieldName %>: {
-                type: Sequelize.<%= attribute.dataFunction ? `${attribute.dataFunction.toUpperCase()}(Sequelize.${attribute.dataType.toUpperCase()})` : attribute.dataType.toUpperCase() %>
+                type: DataTypes.<%= attribute.dataFunction ? `${attribute.dataFunction.toUpperCase()}(DataTypes.${attribute.dataType.toUpperCase()})` : attribute.dataType.toUpperCase() %>
             },
         <% }) %>
 
             <%= createdAt %>: {
                 allowNull: false,
-                type: Sequelize.DATE
+                type: DataTypes.DATE
             },
 
             <%= updatedAt %>: {
                 allowNull: false,
-                type: Sequelize.DATE
+                type: DataTypes.DATE
             }
         });
     },
 
-    down: (queryInterface: QueryInterface, Sequelize: SequelizeStatic) => {
+    down: (queryInterface: QueryInterface) => {
         return queryInterface.dropTable('<%= tableName %>');
     }
 };
