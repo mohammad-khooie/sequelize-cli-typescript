@@ -62,27 +62,27 @@ module.exports = {
     return path.resolve(this.getMigrationsCompiledPath(), this.getFileName('migration', migrationName));
   },
 
-  getMigrationsSourcePath() {
+  getMigrationsSourcePath () {
     return args.migrationsSourcePath || path.resolve(process.cwd(), 'migrations');
   },
 
-  getMigrationsCompiledPath() {
+  getMigrationsCompiledPath () {
     return args.migrationsCompiledPath || path.resolve(process.cwd(), 'migrations/compiled');
   },
   // seeders
-  getSeederSourcePath(seederName) {
+  getSeederSourcePath (seederName) {
     return path.resolve(this.getSeedersSourcePath(), this.getFileName('seeder', seederName));
   },
 
-  getSeederCompiledPath(seederName) {
+  getSeederCompiledPath (seederName) {
     return path.resolve(this.getSeedersCompiledPath(), this.getFileName('seeder', seederName));
   },
 
-  getSeedersSourcePath() {
+  getSeedersSourcePath () {
     return args.seedersSourcePath || path.resolve(process.cwd(), 'seeders');
   },
 
-  getSeedersCompiledPath() {
+  getSeedersCompiledPath () {
     return args.seedersCompiledPath || path.resolve(process.cwd(), 'seeders/compiled');
   },
   //
