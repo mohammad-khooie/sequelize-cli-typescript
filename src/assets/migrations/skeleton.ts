@@ -1,6 +1,6 @@
 import { QueryInterface, DataTypes } from "sequelize";
 
-export default {
+export = {
   up: (queryInterface: QueryInterface) => {},
 
   down: (queryInterface: QueryInterface) => {},
