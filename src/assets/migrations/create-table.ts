@@ -1,6 +1,6 @@
 import { QueryInterface, DataTypes } from 'sequelize';
 
-export = {
+export default {
     up: (queryInterface: QueryInterface) => {
         return queryInterface.createTable('<%= tableName %>', {
             id: {
